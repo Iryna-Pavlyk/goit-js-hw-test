@@ -292,3 +292,16 @@ console.log(calculateTotalPrice("Radar"));
 console.log(calculateTotalPrice("Droid"));
 
 // Колекція значень властивості
+
+// Методи об'єкта
+
+const atTheOldToad = {
+ potions: [],
+ getPotions() {return "List of all available potions"} ,
+ addPotion(potionName) { return `Adding ${potionName}` }
+};
+
+console.log(atTheOldToad.addPotion("Power potion"));
+console.log(atTheOldToad.addPotion("Invisibility"));
+
+// Методи об'єкта
