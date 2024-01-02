@@ -450,8 +450,6 @@ console.log(worstScore);
 
 // Створення масиву
 
-c
-
 const defaultSettings = {
   theme: "light",
   public: true,
