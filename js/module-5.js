@@ -332,5 +332,156 @@ return usersOnline};
 
 // Метод reduce()
 
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244,
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+const totalPlayTime = playtimes.reduce((playtime, value) => 
+{return playtime + value;
+}, 0);
+
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+console.log(totalPlayTime);
+
+// ==========================================================================
+
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+let acc = 0;
+return acc = total + player.playtime / player.gamesPlayed;
+}, 0); 
+
+console.log(totalAveragePlaytimePerGame);
+
+// ==========================================================================
+
+const calculateTotalBalance = (users) => {
+const balance = users.reduce((total, user) => 
+{return total + user.balance;}, 0);
+return balance;};
 
 // Метод reduce()
+
+// Метод toSorted()
+// ==== За замовчуванням ====================================================              
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+];
+
+const ascendingReleaseDates = releaseDates.toSorted();
+
+const alphabeticalAuthors = authors.toSorted();
+
+// ===== За зростанням і спаданням числа==========================================
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+
+const ascendingReleaseDates = releaseDates.toSorted((a, b) => a - b);
+
+const descendingReleaseDates = releaseDates.toSorted((a, b) => b - a);
+
+// ==== Сортування рядків =======================================================
+
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+
+const authorsInAlphabetOrder = authors.toSorted((a, b) => a.localeCompare(b));
+
+const authorsInReversedOrder = authors.toSorted((a, b) => b.localeCompare(a));
+
+// =========================================================================
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    rating: 7.94,
+  },
+  {
+    title: "Enemy of God",
+    author: "Bernard Cornwell",
+    rating: 8.67,
+  },
+];
+
+const sortedByAuthorName = books.toSorted((a, b) => a.author.localeCompare(b.author));
+
+const sortedByReversedAuthorName = books.toSorted((a, b) => b.author.localeCompare(a.author));
+
+const sortedByAscendingRating = books.toSorted((a, b) => a.rating - b.rating);
+
+const sortedByDescentingRating = books.toSorted((a, b) => b.rating - a.rating);
+
+// Метод toSorted()
+
+// Ланцюжки методів
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+
+const names = books
+.filter(book => book.rating > MIN_BOOK_RATING)
+.map(book => book.author)
+.toSorted((a, b) => a.localeCompare(b)
+);
+
+console.log(names);
+
+// Ланцюжки методів
